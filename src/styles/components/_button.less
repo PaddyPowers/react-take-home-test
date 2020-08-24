@@ -1,0 +1,16 @@
+.btn-primary{
+    background:@primary-accent;
+    border:@primary-accent;
+    padding-left:15pt;
+    padding-right:15pt;
+    &:enabled{
+        &:hover{
+        background:@primary-accent;
+        opacity:.90;
+        }
+    }
+    &:disabled{
+        background:@primary-highlight;
+        border:@primary-highlight;
+    }
+}

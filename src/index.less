@@ -1,0 +1,41 @@
+// the CSS is seperated so it is easier to manage accross the app and also that variables can be attached.
+
+@import "styles/utilities/_vars.less";
+@import "styles/components/_cardWidget.less";
+@import "styles/components/_button.less";
+
+body {
+  margin: 0;
+  padding: 10;
+  font-family: "Work Sans", "Helvetica Neue", sans-serif;
+  font-size: 10pt;
+
+}
+
+a {
+  transition: color 0.4s, font-weight 0.8s;
+}
+
+a:link {
+  /* Applies to all unvisited links */
+  text-decoration: none;
+  font-weight: bold;
+  color: #183f3f;
+}
+
+a:visited {
+  /* Applies to all visited links */
+  text-decoration: none;
+  color: #183f3f;
+}
+a:hover {
+  /* Applies to links under the pointer */
+  font-weight: bold;
+  color:@primary-accent;
+  
+}
+a:active {
+  /* Applies to activated links */
+  font-weight: bold;
+  color: #f0f5f0;
+}
