@@ -8,15 +8,16 @@ const propTypes = {
 
 class Header extends Component {
 	render() {
-		const {location, time, temperature, refreshStatus} = this.props;
+		const {data} = this.props;
+		const {main,name} = data
 
 		return (
 			<React.Fragment>
 					<Container>
 					<Row>
-						<Col>1 of 2</Col>
-						<Col>2 of 2</Col>
-						<Col>3 of 3</Col>
+						<Col>{name}</Col>
+						<Col>time</Col>
+						<Col>{Math.round(main.temp)}</Col>
 					</Row>
 					</Container>
 			</React.Fragment>

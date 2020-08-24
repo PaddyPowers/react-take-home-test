@@ -1,23 +1,20 @@
 import { connect } from "react-redux";
 import HomePage from "components/HomePage";
-import actions from "store/features/HomePage/actions";
-import {reset} from "redux-form";
+import { fetchCurrentWeather, fetchForecastWeather } from "../../actions";
 
 const mapDispatchToProps = dispatch => ({
-	addCompany: (data) => {
-		dispatch(actions.addCompany(data));
-		dispatch(reset("addCompany"));
+	getWeather: (data) => {
+		dispatch(fetchCurrentWeather(data));
+		dispatch(fetchForecastWeather(data));
 	},
-	addPerson: (data) => {
-		dispatch(actions.addPerson(data));
-		dispatch(reset("addPerson"));
-	}
 });
 
-const mapStateToProps = ({HomePage}) => {
-	  const companies =  HomePage.get("companies").toJS();
-	  return { companies };
-  };
+
+const mapStateToProps = ({ currentWeather = {} , forecastWeather = {}, isLoadingData = false }) => ({
+	currentWeather,
+	forecastWeather,
+	isLoadingData
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
 

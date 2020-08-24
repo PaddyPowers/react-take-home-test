@@ -4,17 +4,28 @@ import  Header  from "../Header/Header";
 // Homepage is the index page and contains company information and widgets to add extra companies or employees.
 
 const propTypes = {
-	addCompany: PropTypes.func.isRequired,
-	addPerson: PropTypes.func.isRequired,
 };
 
 class HomePage extends Component {
+
+	componentDidMount() {
+		this.props.getWeather();
+	}
+
 	render() {
-		const {	addCompany,addPerson, companies } = this.props;
+		const { currentWeather,forecastWeather , isLoadingData	 } = this.props;
+
+		if(isLoadingData || (Object.keys(currentWeather).length === 0 && currentWeather.constructor === Object)){
+			return(
+				<React.Fragment>
+				Loading . . .
+				</React.Fragment>
+		);
+	}
 
 		return (
 			<React.Fragment>
-					<Header/>
+					<Header data={currentWeather} />
 					{/* <WeatherWidget/> */}
 			</React.Fragment>
 		);
