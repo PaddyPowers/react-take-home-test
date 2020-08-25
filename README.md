@@ -23,7 +23,7 @@ npm install
 npm start
 ```
 
-#### Testing
+## Testing
 * To test this application, first install the application shown in the Getting Started section.
 * then run the following command in with a terminal in the appication directory.
 ```
