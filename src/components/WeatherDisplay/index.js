@@ -1,1 +1,1 @@
-export { default } from "./CompanyInfo";
+export { default } from "./WeatherDisplay";

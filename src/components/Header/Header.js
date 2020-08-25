@@ -17,7 +17,7 @@ class Header extends Component {
 					<Row>
 						<Col>{name}</Col>
 						<Col>time</Col>
-						<Col>{Math.round(main.temp)}</Col>
+						<Col>{Math.round(main.temp)}°</Col>
 					</Row>
 					</Container>
 			</React.Fragment>

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import  Header  from "../Header/Header";
-import  WeatherDisplay  from "../WeatherDisplay/WeatherDisplay";
+import  Header  from "../Header";
+import  Countdown  from "../Countdown";
+import  WeatherDisplay  from "../WeatherDisplay";
 // Homepage is the index page and contains company information and widgets to add extra companies or employees.
 
 const propTypes = {
@@ -14,9 +15,9 @@ class HomePage extends Component {
 	}
 
 	render() {
-		const { currentWeather,forecastWeather , isLoadingData	 } = this.props;
+		const { currentWeather,forecastWeather , isLoadingData , getWeather	 } = this.props;
 
-		if(isLoadingData || Object.keys(currentWeather).length === 0 || Object.keys(forecastWeather).length === 0 ){
+		if(Object.keys(currentWeather).length === 0 || Object.keys(forecastWeather).length === 0 ){
 			return(
 				<React.Fragment>
 				Loading . . .
@@ -27,6 +28,7 @@ class HomePage extends Component {
 		return (
 			<React.Fragment>
 					<Header data={currentWeather} />
+					<Countdown action={getWeather} />
 					<WeatherDisplay data={forecastWeather.list}/>
 			</React.Fragment>
 		);

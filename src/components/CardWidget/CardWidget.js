@@ -8,14 +8,7 @@ import { Link } from "react-router-dom";
 class CardWidget extends Component {
 	render() {
 		
-		const {	title, body, linkAddress, footer} = this.props;
-
-		let cardFooter;
-
-		if(typeof footer !== "undefined")
-		{
-			cardFooter = footer;
-		}
+		const {	title, body, linkAddress, icon} = this.props;
 
 		let header =  <Card.Header><h5 className="mt-2">{title}</h5></Card.Header>;
 		if(typeof linkAddress !== "undefined"){
@@ -27,8 +20,9 @@ class CardWidget extends Component {
 				{header}
 				<Card.Body>
 					{body}
+
+					<img src={icon}/>
 				</Card.Body>
-				<Card.Footer>{cardFooter}</Card.Footer>
 			</Card>
 		);
 	}

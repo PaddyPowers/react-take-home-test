@@ -7,6 +7,15 @@ const mapDispatchToProps = dispatch => ({
 		dispatch(fetchCurrentWeather(data));
 		dispatch(fetchForecastWeather(data));
 	},
+	startTimer: (data) => {
+		dispatch(startTimer(data));
+	},
+	updateTimer: (data) => {
+		dispatch(updateTimer(data));
+	},
+	resetTimer: (data) => {
+		dispatch(resetTimer(data));
+	},
 });
 
 
