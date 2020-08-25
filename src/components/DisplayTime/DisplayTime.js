@@ -44,9 +44,19 @@ class DisplayTime extends React.Component {
                 <div className="display-time">
 
                 <Row >
-						<Col className="light-container col-2" >{lights.map((light,index) => <FlashingLight key={`first-${index}`} active={this.state.lightStage === index}/> )}</Col>
-						<Col><div>{this.state.date.toLocaleTimeString([],{ hour: '2-digit', minute: '2-digit' })} </div></Col>
-						<Col className="light-container col-2" >{lights.map((light,index) => <FlashingLight key={`second-${index}`} active={this.state.lightStage === index}/> )}</Col>
+						<Col>
+                            <div className="light-container">
+                                {lights.map((light,index) => <FlashingLight key={`first-${index}`} active={this.state.lightStage === index}/> )}
+                            </div>
+                        </Col>
+						<Col>
+                            <div>{this.state.date.toLocaleTimeString([],{ hour: '2-digit', minute: '2-digit' })} </div>
+                        </Col>
+						<Col>
+                            <div className="light-container">
+                                {lights.map((light,index) => <FlashingLight key={`second-${index}`} active={this.state.lightStage === index}/> )}
+                            </div>
+                        </Col>
                 </Row>
 
 

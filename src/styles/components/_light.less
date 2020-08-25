@@ -1,10 +1,14 @@
-.light{
-    width:5px;
-    height:8px;
-    background:black;
-    transition: background 2000ms;
-
-    &.active{
-        background:red;
+.light-container{
+    width:20px;
+    .light{
+        width:5px;
+        height:8px;
+        background:@secondary-accent;
+        transition: background 2000ms;
+        border-radius:50%;
+    
+        &.active{
+            background:@primary-accent;
+        }
     }
 }

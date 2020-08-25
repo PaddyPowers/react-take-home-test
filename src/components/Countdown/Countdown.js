@@ -6,7 +6,7 @@ class Countdown extends React.Component{
 	  this.state = {
 		speed: 1,
 		timer:1,
-		initialTime:250,
+		initialTime:25,
 	  }
 	  this.frame = this.frame.bind(this);
 	}
@@ -39,12 +39,14 @@ class Countdown extends React.Component{
 	  	<React.Fragment >
 		<div className="countdown">
 		<span>Refreshing in {this.state.initialTime - this.state.timer}s</span>
-		<div className="progress-bar mt-1" style={{
-			transition:this.state.timer === 0 ? '0s' : '1s linear',
-			height:"20px",
-			width: (this.state.timer / this.state.initialTime) * 100 + "%"
-		  }}/>
-		  </div>
+		<div className="progress-bar-container mt-1">
+			<div className="progress-bar " style={{
+				transition:this.state.timer === 0 ? '0s' : '1s linear',
+				height:"20px",
+				width: (this.state.timer / this.state.initialTime) * 100 + "%"
+			}}/>
+			</div>
+		</div>
 		</React.Fragment>);
 	}  
 }
