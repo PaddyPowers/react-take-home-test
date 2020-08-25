@@ -15,7 +15,7 @@ export default function(state = {}, action) {
     case SET_CURRENT_WEATHER_DATA:
         return {...state, currentWeather: action.payload };
     case SET_FORECAST_WEATHER_DATA:
-        return {...state, forecastWeather: action.payload };
+      return {...state, forecastWeather: action.payload };
       case API_START:
         // if (action.payload === FETCH_ARTICLE_DETAILS) {
           return {
