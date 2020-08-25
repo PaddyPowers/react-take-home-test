@@ -1,0 +1,17 @@
+.weather-display-list-enter {
+    opacity: 0;
+    transform:translateY(10%);
+  }
+  .weather-display-list-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 500ms, transform 500ms;
+  }
+  .weather-display-list-exit {
+    opacity: 1;
+  }
+  .weather-display-list-exit-active {
+    opacity: 0;
+    transform:  scale(0.9);
+    transition: opacity 500ms, transform 500ms;
+  }

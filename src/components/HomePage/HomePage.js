@@ -28,7 +28,6 @@ class HomePage extends Component {
 		return (
 			<React.Fragment>
 					<Header action={getWeather} data={currentWeather} />
-
 					<WeatherDisplay data={forecastWeather.list}/>
 			</React.Fragment>
 		);

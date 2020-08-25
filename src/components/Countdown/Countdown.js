@@ -6,11 +6,13 @@ class Countdown extends React.Component{
 	  this.state = {
 		speed: 1,
 		timer:1,
-		initialTime:25,
+		initialTime:250,
 	  }
 	  this.frame = this.frame.bind(this);
-
 	}
+
+
+	
 	  componentDidMount() {
 		this.interval = setInterval(() => this.frame(), 1000);
 	  }
@@ -20,7 +22,6 @@ class Countdown extends React.Component{
 		  this.setState((prevState, props) => ({
 			timer: this.state.timer + this.state.speed,
 		  })); 
-		  console.log(this.state.timer);  
 		}
 		else{
 			this.props.action();

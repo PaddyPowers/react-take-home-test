@@ -6,14 +6,22 @@ import { Row, Col } from "react-bootstrap";
 class CardWidget extends Component {
 	render() {
 		
-		const {	title, body, icon} = this.props;
+		const {	title, temp, icon, description} = this.props;
 
 		return (
 			<div className="card">
 					<Row>
-						<Col className="day" >{title}</Col>
-						<Col className="temp" >{body}°</Col>
-						<Col><img src={icon}/></Col>
+						<Col className="day col-4" >{title}</Col>
+						<Col className="temp col-2" >{temp}</Col>
+						<Col className="icon-description">
+							<Row>
+								<img className="icon" src={icon}/>
+							</Row>
+							<Row>
+								<div className="description">{description}</div>
+							</Row>
+			
+						</Col>
 					</Row>
 			</div>
 		);

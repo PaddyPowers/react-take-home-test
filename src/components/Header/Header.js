@@ -10,8 +10,8 @@ const propTypes = {
 
 class Header extends Component {
 	render() {
-		const {data} = this.props;
-		const {main,name, action} = data
+		const {data, action} = this.props;
+		const {main,name} = data
 
 		return (
 			<React.Fragment>

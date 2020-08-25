@@ -3,9 +3,32 @@
     background: linear-gradient(180deg, @primary-grey-dark 0%, @primary-grey-light 100%);
     margin-bottom:5pt;
     color:@primary-clear;
+    text-transform:uppercase;
+    min-height:84px;
     .day,.temp{
         font-size:@large;
+        display:flex;
+        justify-content:center;
+        align-items:center;
     }
+    .icon{
+        max-width:65px;
+    }
+    
+
+    .icon-description{
+        margin-right:2pt;
+        .description{
+            margin-right:12pt;
+            transform:translateY(-7pt);
+        }
+        .row{
+            justify-content: flex-end;
+            margin-left:initial;
+            margin-right:initial;
+        }
+    }
+    
 
 
 } 
