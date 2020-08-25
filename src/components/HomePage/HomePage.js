@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import  Header  from "../Header";
-import  Countdown  from "../Countdown";
+
 import  WeatherDisplay  from "../WeatherDisplay";
 // Homepage is the index page and contains company information and widgets to add extra companies or employees.
 
@@ -27,8 +27,8 @@ class HomePage extends Component {
 
 		return (
 			<React.Fragment>
-					<Header data={currentWeather} />
-					<Countdown action={getWeather} />
+					<Header action={getWeather} data={currentWeather} />
+
 					<WeatherDisplay data={forecastWeather.list}/>
 			</React.Fragment>
 		);

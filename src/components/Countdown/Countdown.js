@@ -4,28 +4,28 @@ class Countdown extends React.Component{
 	constructor(){
 	  super();
 	  this.state = {
-		progress: 0,
 		speed: 1,
+		timer:1,
+		initialTime:25,
 	  }
 	  this.frame = this.frame.bind(this);
 
 	}
 	  componentDidMount() {
-		console.clear();
 		this.interval = setInterval(() => this.frame(), 1000);
 	  }
 
 	  frame() {
-		if (this.state.progress < 100){
+		if (this.state.timer < this.state.initialTime){
 		  this.setState((prevState, props) => ({
-			progress: prevState.progress + this.state.speed,
+			timer: this.state.timer + this.state.speed,
 		  })); 
-		  console.log(this.state.progress);  
+		  console.log(this.state.timer);  
 		}
 		else{
 			this.props.action();
 			this.setState((prevState, props) => ({
-				progress: 0,
+				timer: 0,
 			}));	
 		}
 	  }
@@ -34,13 +34,17 @@ class Countdown extends React.Component{
 	  }
 
 	render(){
-	  return (
-		<div id="myBar" style={{
-			height:'20px',
-			background:"red",
-			width: this.state.progress + "%"
-		  }}>
-		</div>);
+	  return (		
+	  	<React.Fragment >
+		<div className="countdown">
+		<span>Refreshing in {this.state.initialTime - this.state.timer}s</span>
+		<div className="progress-bar mt-1" style={{
+			transition:this.state.timer === 0 ? '0s' : '1s linear',
+			height:"20px",
+			width: (this.state.timer / this.state.initialTime) * 100 + "%"
+		  }}/>
+		  </div>
+		</React.Fragment>);
 	}  
 }
 

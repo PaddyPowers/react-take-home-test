@@ -29,9 +29,11 @@ class WeatherDisplay extends Component {
 
 		return (
 			<React.Fragment>
+				<div className="p-2">
 				{Object.keys(dailyData).map((key, index) => {
-					 return <CardWidget key={index} title={dailyData[key].name} body={`${Math.round(dailyData[key].temp)}° ${dailyData[key].weatherInfo.description}`} icon={dailyData[key].weatherInfo.icon} />;
+					 return <CardWidget key={index} title={dailyData[key].name.substring(0,3)} body={`${Math.round(dailyData[key].temp)}° ${dailyData[key].weatherInfo.description}`} icon={dailyData[key].weatherInfo.icon} />;
 				 })}
+				</div>
 			</React.Fragment>
 		);
 	}

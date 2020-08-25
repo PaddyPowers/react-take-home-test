@@ -1,29 +1,21 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Row, Col } from "react-bootstrap";
 
 // Card Widget is a reusable widget that can display a title, body and footer.
 
 class CardWidget extends Component {
 	render() {
 		
-		const {	title, body, linkAddress, icon} = this.props;
-
-		let header =  <Card.Header><h5 className="mt-2">{title}</h5></Card.Header>;
-		if(typeof linkAddress !== "undefined"){
-			header = <Link to={linkAddress}>{header}</Link>;
-		}
+		const {	title, body, icon} = this.props;
 
 		return (
-			<Card className="mb-3">
-				{header}
-				<Card.Body>
-					{body}
-
-					<img src={icon}/>
-				</Card.Body>
-			</Card>
+			<div className="card">
+					<Row>
+						<Col className="day" >{title}</Col>
+						<Col className="temp" >{body}°</Col>
+						<Col><img src={icon}/></Col>
+					</Row>
+			</div>
 		);
 	}
 }
