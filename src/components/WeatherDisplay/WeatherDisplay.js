@@ -40,7 +40,7 @@ class WeatherDisplay extends Component {
 		});
 		Object.keys(dailyData).map((key, index) => {
 			 const weatherCode = mostFrequent(dailyData[key].data.map(segment => segment.weather[0].id));
-			 dailyData[key].weatherInfo = handleWeatherInfo(weatherCode[0]);
+			 dailyData[key].weatherInfo = handleWeatherInfo(weatherCode);
 			 dailyData[key].temp = dailyData[key].temp / dailyData[key].data.length;
 		});
 

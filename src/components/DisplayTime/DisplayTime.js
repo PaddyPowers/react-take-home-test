@@ -14,8 +14,6 @@ class DisplayTime extends React.Component {
     
     tick() {
         this.setState({ date: new Date() });
-
-        console.log(this.state.lightStage);
         if (this.state.lightStage < 2){
             this.setState((prevState, props) => ({
                 lightStage: this.state.lightStage + 1,
