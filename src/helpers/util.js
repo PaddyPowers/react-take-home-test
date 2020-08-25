@@ -67,13 +67,7 @@ const weatherApi = {
 };
 
 
-
-export function capitalize(s)
-{
-    return s && s[0].toUpperCase() + s.slice(1);
-}
-
-export function getDayFromTimestamp(timestamp){
+function getDayFromTimestamp(timestamp){
     var dayNum = new Date(timestamp * 1000).getDay();
     return days[dayNum];
 }
@@ -96,4 +90,4 @@ const handleWeatherInfo = key => {
     };
 };
 
-export { mostFrequent , handleWeatherInfo};
+export { mostFrequent , handleWeatherInfo, getDayFromTimestamp};

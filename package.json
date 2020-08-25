@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server",
-    "lint": "eslint --fix src index.js webpack.config.js"
+    "lint": "eslint --fix src index.js webpack.config.js",
+    "test": "jest"
   },
   "dependencies": {
     "autoprefixer": "7.1.6",
@@ -61,11 +62,15 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "jest": "^26.4.2"
   },
   "babel": {
     "presets": [
-      "react-app"
+      "react-app", "env", "react", "stage-2"
+    ],
+    "test": [
+      "jest","babel-preset-env'"
     ]
   },
   "eslintConfig": {
