@@ -76,7 +76,7 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
-      template: "./index.html",
+      template: "./public/index.html",
       minify: {
         removeComments: true,
         collapseWhitespace: true,
