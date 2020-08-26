@@ -5,6 +5,15 @@ The application is designed to visualise the API of https://openweathermap.org
 
 ![Screenshot of application](https://nova-futur-repo.s3.eu-west-2.amazonaws.com/Screenshot+2020-08-25+at+21.33.25.png)
 
+## Demo
+    http://nova-futur.s3-website.eu-west-2.amazonaws.com/
+
+## Notable Features
+* Use of Redux to request data and store in state.
+* Use of BitBucket's CI/CD Platform.
+* Use of unit testing through Jest.
+* Use of linting to ensure code consistency.
+
 ## Getting Started
 
 #### Running Locally 
@@ -28,7 +37,7 @@ npm start
 npm test
 ```
 
-## Notes to improve upon
+## Notes to Improve Upon
 * Test coverage is limited to the utility functions, it should be expanded to:
     * API Middleware.
     * Receiving expected data from API.
