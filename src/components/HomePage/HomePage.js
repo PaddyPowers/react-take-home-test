@@ -17,11 +17,10 @@ class HomePage extends Component {
 
 	render() {
 		const { currentWeather,forecastWeather, getWeather} = this.props;
-
 		if(Object.keys(currentWeather).length === 0 || Object.keys(forecastWeather).length === 0 ){
 			return(
 				<React.Fragment>
-				Loading . . .
+					<Header action={getWeather} data={{name:"",main:{temp:0}}} />
 				</React.Fragment>
 		);
 	}

@@ -7,7 +7,8 @@
   "scripts": {
     "start": "webpack-dev-server",
     "lint": "eslint --fix src index.js webpack.config.js",
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack --config webpack.config.prod.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
@@ -27,7 +28,6 @@
     "file-loader": "1.1.5",
     "formik": "^2.1.5",
     "fs-extra": "3.0.1",
-    "html-webpack-plugin": "2.29.0",
     "immutable": "^4.0.0-rc.12",
     "less": "^3.0.1",
     "less-loader": "^4.0.5",
@@ -63,8 +63,12 @@
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-stage-0": "^7.8.3",
     "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^2.30.1",
     "jest": "^26.4.2",
-    "webpack": "^3.8.1"
+    "mini-css-extract-plugin": "^0.10.0",
+    "webpack": "^3.8.1",
+    "webpack-merge": "^5.1.2"
   },
   "eslintConfig": {
     "extends": "react-app"
