@@ -5,8 +5,6 @@ The application is designed to visualise the API of https://openweathermap.org
 
 ![Screenshot of application](https://nova-futur.s3.eu-west-2.amazonaws.com/Screenshot+2020-08-25+at+21.33.25.png)
 
-
-
 ## Getting Started
 
 #### Running Locally 
@@ -29,6 +27,15 @@ npm start
 ```
 npm test
 ```
+
+## Notes to improve upon
+* Test coverage is limited to the utility functions, it should be expanded to:
+    * API Middleware.
+    * Receiving expected data from API.
+    * Snapshot testing of expected components.
+* Some of the weather icons have a night alternative, it would be nice to change that depending on the time of day.
+* I think it would be more beneficial to use the new One Call API https://openweathermap.org/api/one-call-api but as according to the test I used the two provided resources.
+* There needs to be placeholder elements whilst the API fetches the requests.
 
 ## Support
 If you have any questions, please reach out to patrickdrabble@outlook.com.

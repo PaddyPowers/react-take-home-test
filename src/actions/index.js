@@ -1,8 +1,15 @@
 import {SET_CURRENT_WEATHER_DATA,SET_FORECAST_WEATHER_DATA, API, FETCH_CURRENT_WEATHER_DATA, FETCH_FORECAST_WEATHER_DATA } from "./types";
 
+const settings = {
+  url:"https://api.openweathermap.org/data/2.5/",
+  city:"london",
+  appid:"fe68f62a31f0a96b58e2ae5cc4f07fd0",
+  unit:"metric"
+};
+
 export function fetchCurrentWeather() {
   return apiAction({
-    url: "https://api.openweathermap.org/data/2.5/weather?q=london&appid=fe68f62a31f0a96b58e2ae5cc4f07fd0&units=metric",
+    url: `${settings.url}weather?q=${city}&appid=${appid}units=${metric}`,
     onSuccess: setCurrentWeatherData,
     onFailure: () => console.log("Error occured loading current Weather"),
     label: FETCH_CURRENT_WEATHER_DATA,
@@ -11,7 +18,7 @@ export function fetchCurrentWeather() {
 
 export function fetchForecastWeather() {
   return apiAction({
-    url: "https://api.openweathermap.org/data/2.5/forecast?q=London,us&appid=fe68f62a31f0a96b58e2ae5cc4f07fd0&units=metric",
+    url: `${settings.url}forecast?q=${city}&appid=${appid}units=${metric}`,
     onSuccess: setForecastWeatherData,
     onFailure: () => console.log("Error occured loading forecast weather"),
     label: FETCH_FORECAST_WEATHER_DATA,

@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import  Header  from "../Header";
 import  WeatherDisplay  from "../WeatherDisplay";
-// Homepage is the index page and contains company information and widgets to add extra companies or employees.
 
 const propTypes = {
+	currentWeather: PropTypes.object,
+	forecastWeather: PropTypes.object,
+	getWeather: PropTypes.func,
 };
 
 class HomePage extends Component {
@@ -14,7 +16,7 @@ class HomePage extends Component {
 	}
 
 	render() {
-		const { currentWeather,forecastWeather , isLoadingData , getWeather	 } = this.props;
+		const { currentWeather,forecastWeather, getWeather} = this.props;
 
 		if(Object.keys(currentWeather).length === 0 || Object.keys(forecastWeather).length === 0 ){
 			return(

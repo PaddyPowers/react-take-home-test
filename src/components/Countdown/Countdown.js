@@ -1,17 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
+
+const propTypes = {
+	action: PropTypes.func,
+};
 
 class Countdown extends React.Component{
 	constructor(){
 	  super();
 	  this.state = {
 		speed: 1,
-		timer:1,
+		timer:0,
 		initialTime:25,
-	  }
+	  };
 	  this.frame = this.frame.bind(this);
 	}
-
-
 	
 	  componentDidMount() {
 		this.interval = setInterval(() => this.frame(), 1000);
@@ -41,7 +44,7 @@ class Countdown extends React.Component{
 		<span>Refreshing in {this.state.initialTime - this.state.timer}s</span>
 		<div className="progress-bar-container mt-1">
 			<div className="progress-bar " style={{
-				transition:this.state.timer === 0 ? '0s' : '1s linear',
+				transition:this.state.timer === 0 ? "0s" : "1s linear",
 				height:"20px",
 				width: (this.state.timer / this.state.initialTime) * 100 + "%"
 			}}/>
@@ -51,5 +54,5 @@ class Countdown extends React.Component{
 	}  
 }
 
-
+Countdown.propTypes = propTypes;
 export default Countdown;

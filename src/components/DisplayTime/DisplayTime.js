@@ -1,6 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import FlashingLight from "../FlashingLight";
 import {Row, Col} from "react-bootstrap";
+import PropTypes from "prop-types";
+
+const propTypes = {
+	lightStage: PropTypes.number,
+};
+
 class DisplayTime extends React.Component {
     
     constructor(props) {
@@ -41,20 +47,20 @@ class DisplayTime extends React.Component {
             <React.Fragment>
                 <div className="display-time">
 
-                <Row >
-						<Col>
-                            <div className="light-container">
-                                {lights.map((light,index) => <FlashingLight key={`first-${index}`} active={this.state.lightStage === index}/> )}
-                            </div>
-                        </Col>
-						<Col>
-                            <div>{this.state.date.toLocaleTimeString([],{ hour: '2-digit', minute: '2-digit' })} </div>
-                        </Col>
-						<Col>
-                            <div className="light-container">
-                                {lights.map((light,index) => <FlashingLight key={`second-${index}`} active={this.state.lightStage === index}/> )}
-                            </div>
-                        </Col>
+                <Row>
+                    <Col>
+                        <div className="light-container">
+                            {lights.map((light,index) => <FlashingLight key={`first-${index}`} active={this.state.lightStage === index}/> )}
+                        </div>
+                    </Col>
+                    <Col>
+                        <div>{this.state.date.toLocaleTimeString([],{ hour: "2-digit", minute: "2-digit" })} </div>
+                    </Col>
+                    <Col>
+                        <div className="light-container">
+                            {lights.map((light,index) => <FlashingLight key={`second-${index}`} active={this.state.lightStage === index}/> )}
+                        </div>
+                    </Col>
                 </Row>
 
 
@@ -64,4 +70,5 @@ class DisplayTime extends React.Component {
     }
 };
 
+DisplayTime.propTypes = propTypes;
 export default DisplayTime;

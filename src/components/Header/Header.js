@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import  DisplayTime  from "../DisplayTime";
 import  Countdown  from "../Countdown";
-import { Row, Col} from "react-bootstrap";
-// Header is the index page and contains company information and widgets to add extra companies or employees.
+import {Row, Col} from "react-bootstrap";
 
 const propTypes = {
+	data: PropTypes.object,
+	action: PropTypes.func,
 };
 
 class Header extends Component {

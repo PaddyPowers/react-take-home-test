@@ -1,0 +1,21 @@
+image: nikolaik/python-nodejs:python3.7-nodejs10
+
+pipelines:
+  branches:
+    master:
+      - step:
+          script:
+            # install npm
+            - npm i
+            # test application
+            - npm test
+            # build distribution
+            - npm run build
+            # download pip
+            - curl -O https://bootstrap.pypa.io/get-pip.py
+            # install pip
+            - python get-pip.py
+            # install aws CLI
+            - pip install awscli
+            # copy static files to s3 bucket
+            - aws s3 sync --delete ./dist/ s3://nova-futur/

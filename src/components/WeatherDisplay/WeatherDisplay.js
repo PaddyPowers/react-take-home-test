@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import  CardWidget  from "../CardWidget/CardWidget";
 import  {mostFrequent, getDayFromTimestamp, handleWeatherInfo}  from "../../helpers/util.js";
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition } from "react-transition-group";
+
+const propTypes = {
+	data: PropTypes.array,
+};
 
 class WeatherDisplay extends Component {
 
@@ -20,10 +24,8 @@ class WeatherDisplay extends Component {
 	}
 
 	render() {		
-		const {	data,inProp } = this.props;
+		const {	data } = this.props;
 
-
-		
 		var dailyData={};
 		data.map(item => {
 		   const dateTime = new Date(item.dt * 1000);
@@ -55,7 +57,7 @@ class WeatherDisplay extends Component {
 				>
 				<div id="weather-display" className="p-2">
 				{Object.keys(dailyData).slice(0, 5).map((key, index) => {
-					 return <CardWidget key={index} title={dailyData[key].name.substring(0,3)} temp={`${Math.round(dailyData[key].temp)}°`} description={dailyData[key].weatherInfo.description} icon={dailyData[key].weatherInfo.icon} />;
+					 return <CardWidget key={index} day={dailyData[key].name.substring(0,3)} temp={`${Math.round(dailyData[key].temp)}°`} description={dailyData[key].weatherInfo.description} icon={dailyData[key].weatherInfo.icon} />;
 				 })}
 				</div>
 				</CSSTransition>
@@ -64,4 +66,5 @@ class WeatherDisplay extends Component {
 	}
 }
 
+WeatherDisplay.propTypes = propTypes;
 export default WeatherDisplay;
