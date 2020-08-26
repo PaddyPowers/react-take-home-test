@@ -36,6 +36,7 @@ npm test
 * Some of the weather icons have a night alternative, it would be nice to change that depending on the time of day.
 * I think it would be more beneficial to use the new One Call API https://openweathermap.org/api/one-call-api but as according to the test I used the two provided resources.
 * There needs to be placeholder elements whilst the API fetches the requests.
+* Production needs to be minified and uglified.
 
 ## Support
 If you have any questions, please reach out to patrickdrabble@outlook.com.

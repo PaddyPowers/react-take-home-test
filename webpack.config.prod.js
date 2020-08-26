@@ -11,7 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, "./dist")
   },
   performance: {
-    hints: process.env.NODE_ENV === 'production' ? "warning" : false
+    hints: process.env.NODE_ENV === "production" ? "warning" : false
   },
   resolve: {
     modules: ["node_modules", "src"],
@@ -58,7 +58,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./public/index.html",
       // filename: "./index.html",
-      favicon: './public/favicon.ico'
+      favicon: "./public/favicon.ico"
     })
   ]
 };
