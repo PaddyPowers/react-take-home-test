@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import  Header  from "../Header";
 import  WeatherDisplay  from "../WeatherDisplay";
 
+// The Homepage displays the header and Weather Display Component, it is also the only component connected to a container.
+// getWeather fires a dispatch call to fetch two API resources, one for current weather and another for forecast weather.
+// Those are provided as two seperate objects for displaying in their respective components.
+
 const propTypes = {
 	currentWeather: PropTypes.object,
 	forecastWeather: PropTypes.object,

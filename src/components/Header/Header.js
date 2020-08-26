@@ -4,6 +4,8 @@ import  DisplayTime  from "../DisplayTime";
 import  Countdown  from "../Countdown";
 import {Row, Col} from "react-bootstrap";
 
+// Header is used to display the city, displayTime component and the temperature provided by the API
+
 const propTypes = {
 	data: PropTypes.object,
 	action: PropTypes.func,

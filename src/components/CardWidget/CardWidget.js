@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 import PropTypes from "prop-types";
 
+// Card Widget is designed to display simple pieces of weather data per day.
+
 const propTypes = {
 	action: PropTypes.string,
 	temp: PropTypes.string,

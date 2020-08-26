@@ -4,6 +4,9 @@ import  CardWidget  from "../CardWidget/CardWidget";
 import  {mostFrequent, getDayFromTimestamp, handleWeatherInfo}  from "../../helpers/util.js";
 import { CSSTransition } from "react-transition-group";
 
+// WeatherDisplay is used to show the upcoming 5 days of weather starting from today. 
+// CSS Transition is used to add a little movement on startup to the application.
+
 const propTypes = {
 	data: PropTypes.array,
 };

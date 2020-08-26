@@ -3,12 +3,14 @@ import FlashingLight from "../FlashingLight";
 import {Row, Col} from "react-bootstrap";
 import PropTypes from "prop-types";
 
+
+// Display Time is a component with its own state to display the time in a HH:MM format, it will refresh every second.
+
 const propTypes = {
 	lightStage: PropTypes.number,
 };
 
 class DisplayTime extends React.Component {
-    
     constructor(props) {
         super(props);
         this.state = { 

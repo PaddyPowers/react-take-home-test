@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+
+// Countdown is a widget with its own state that will fire a function after a set amount of seconds. This is provided through the action function.
+
 const propTypes = {
 	action: PropTypes.func,
 };
